@@ -6,9 +6,9 @@ import {PlayerGraphComponent} from "./player-graph/player-graph.component";
 
 
 const routes: Routes = [
-  {path: '', redirectTo: '/profile', pathMatch: 'full'},
+  {path: '', redirectTo: '/profile/Piranas', pathMatch: 'full'},
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'profile', component: PlayerProfileComponent},
+  {path: 'profile/:playername', component: PlayerProfileComponent},
   {path: 'graph', component: PlayerGraphComponent},
 ];
 

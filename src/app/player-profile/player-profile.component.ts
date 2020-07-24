@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {PlayerService} from "../services/player.service";
 import {Player} from "../models/Player";
 import {players} from "../models/mocks/playersMock";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-player-profile',
@@ -10,24 +11,28 @@ import {players} from "../models/mocks/playersMock";
 })
 export class PlayerProfileComponent implements OnInit {
 
-  constructor(private playerService: PlayerService) {
+  constructor(
+    private route: ActivatedRoute,
+    private playerService: PlayerService) {
   }
 
   player: Player;
 
   ngOnInit(): void {
-    this.getMockedProfile();
+    // this.getMockedProfile();
+    this.getProfile();
   }
 
   getProfile(): void {
-    this.playerService.getProfile("Simone92")
+    const playername = this.route.snapshot.paramMap.get('playername');
+    this.playerService.getProfile(playername)
       .subscribe(profile => {
-        this.player = profile
+        this.player = profile;
       })
   }
 
   getMockedProfile(): void {
     this.player = players[0]; //TODO id from path
-    //TODO name from path
+
   }
 }
