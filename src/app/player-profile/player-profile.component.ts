@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PlayerService} from "../services/player.service";
 import {Player} from "../models/Player";
+import {players} from "../models/mocks/playersMock";
 
 @Component({
   selector: 'app-player-profile',
@@ -15,7 +16,7 @@ export class PlayerProfileComponent implements OnInit {
   player: Player;
 
   ngOnInit(): void {
-    this.getProfile();
+    this.getMockedProfile();
   }
 
   getProfile(): void {
@@ -25,4 +26,8 @@ export class PlayerProfileComponent implements OnInit {
       })
   }
 
+  getMockedProfile(): void {
+    this.player = players[0]; //TODO id from path
+    //TODO name from path
+  }
 }

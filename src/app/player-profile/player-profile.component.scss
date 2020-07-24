@@ -1,10 +1,60 @@
 :host {
   #profile {
-    background-color: aqua;
+    //background-color: aqua;
+  }
+
+  // Page displaying all containers (TODO: move to specific component)
+  .pageContainers {
+    padding: 150px; //TODO: mobile
+    //background-size: 150px;
+    //background-repeat: space;
+    background-image:
+      url("https://x.boardgamearena.net/data/themereleases/200316-1631/img/layout/back-main.jpg");
+  }
+  .container {
+    //border
+    border: 2px solid black;
+    background-color: #FFFC00;
+    border-radius: 30px;
+  }
+
+  .playerInfo {
+    //display: grid;
+    width: 40%;
+    height: 160px; // TODO: externalize with avatar size
   }
 
   .avatar {
-    width: 184px;
-    height: 184px;
+    width: 160px;
+    height: 160px;
+    float: left;
+    border-radius: 30px;
   }
+
+
+  .playerName {
+    background-color: #1976d2;
+  }
+
+  .country {
+    width: 32px;
+    height: 32px;
+    float: right;
+  }
+
+  .playerAvatar {
+    background-color: #d258bc;
+  }
+
+  .rankingEvolution {
+  }
+
+  .xp_container {
+    background-color: black;
+    color: #fec700;
+    height: 16px;
+    font-weight: bold;
+    display: inline-block;
+  }
+
 }

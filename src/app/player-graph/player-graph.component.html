@@ -1,0 +1,15 @@
+<p>player-graph works!</p>
+<div *ngIf="dataAvailable" style="display: block;">
+  <div class="chart-wrapper" style="display: block">
+    <h2>Linear evolution</h2>
+    <canvas baseChart
+            [datasets]="lineChartData"
+            [labels]="lineChartLabels"
+            [options]="graphConfig.lineChartOptions"
+            [legend]="graphConfig.lineChartLegend"
+            [chartType]="graphConfig.lineChartType"
+            (chartHover)="graphConfig.chartHovered($event)"
+            (chartClick)="graphConfig.chartClicked($event)">
+    </canvas>
+  </div>
+</div>

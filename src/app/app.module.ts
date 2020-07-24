@@ -6,15 +6,19 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PlayerProfileComponent } from './player-profile/player-profile.component';
 import {HttpClientModule} from "@angular/common/http";
+import { PlayerGraphComponent } from './player-graph/player-graph.component';
+import {ChartsModule} from "ng2-charts";
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    PlayerProfileComponent
+    PlayerProfileComponent,
+    PlayerGraphComponent
   ],
   imports: [
     BrowserModule,
+    ChartsModule,
     HttpClientModule,
     AppRoutingModule
   ],

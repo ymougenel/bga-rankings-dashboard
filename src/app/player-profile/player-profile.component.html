@@ -1,7 +1,26 @@
 <div id="profile">
   <p>player-profile works!</p>
-  <div *ngIf="player" style="display: block;">
-    <img class="avatar" src="https://x.boardgamearena.net/data/avatar/0/86/86499/86499799_184.jpg?h=6d842155ee" />
-    {{ player.name }}
+
+  <!--Profil info: name, avatar & XP-->
+  <div class="pageContainers">
+
+    <div class="playerInfo container" *ngIf="player">
+      <div class="playerAvatar">
+        <img class="avatar" src="https://x.boardgamearena.net/data/avatar/0/86/86499/86499799_184.jpg?h=6d842155ee"/>
+      </div>
+      <div>
+        <img class="country" src="https://x.boardgamearena.net/data/avatar/0/86/86499/86499799_184.jpg?h=6d842155ee"/>
+        <h1 class="playerName">{{ player.name }}</h1>
+      </div>
+      <div class="xp_container">10k XP
+        <div class="arrowback"></div>
+        <div class="arrow"></div>
+        <div class="arrowbackl"></div>
+        <div class="arrowl"></div>
+      </div>
+    </div>
+
   </div>
+  <!--TODO: Graph -->
 </div>
+
