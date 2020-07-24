@@ -4,10 +4,10 @@
 
     <div class="playerInfo container" *ngIf="player">
       <div class="playerAvatar">
-        <img class="avatar" src="https://x.boardgamearena.net/data/avatar/0/86/86499/86499799_184.jpg?h=6d842155ee"/>
+        <img class="avatar" [src]="player.avatar"/>
       </div>
       <div>
-        <img class="country" src="https://x.boardgamearena.net/data/avatar/0/86/86499/86499799_184.jpg?h=6d842155ee"/>
+        <div class="country" ></div>
         <h1 class="playerName">{{ player.name }}</h1>
       </div>
       <div class="xp_container">10k XP

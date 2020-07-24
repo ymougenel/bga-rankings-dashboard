@@ -1,9 +1,9 @@
 export class Player {
   name: string;
-  id: number;
+  id: string;
   avatar: string;
   // langues: string[];
   // gender: string;
   country: string;
-  // countryFlag: url;
+  // countryFlag: string="";
 }
