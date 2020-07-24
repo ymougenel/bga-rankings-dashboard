@@ -51,10 +51,22 @@
 
   .xp_container {
     background-color: black;
+    border-top: 2px solid #787878;
+    border-bottom: 2px solid #787878;
     color: #fec700;
-    height: 16px;
     font-weight: bold;
     display: inline-block;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 0px;
+    padding-right: 0px;
+    position: relative;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 4px;
+    height: 16px;
+    line-height: 17px;
   }
+
 
 }
