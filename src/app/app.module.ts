@@ -9,6 +9,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { PlayerGraphComponent } from './player-graph/player-graph.component';
 import {ChartsModule} from "ng2-charts";
 import {CoreModule} from "./core/core.module";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {CoreModule} from "./core/core.module";
     AppRoutingModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule,
     CoreModule,
   ],
   providers: [],

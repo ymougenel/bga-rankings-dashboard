@@ -19,9 +19,12 @@
     "@angular/platform-browser": "~9.1.0",
     "@angular/platform-browser-dynamic": "~9.1.0",
     "@angular/router": "~9.1.0",
-    "rxjs": "~6.5.4",
+    "bootstrap": "^4.5.0",
     "chart.js": "^2.9.3",
+    "font-awesome": "^4.7.0",
+    "lodash": "^4.17.19",
     "ng2-charts": "^2.2.4",
+    "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },
