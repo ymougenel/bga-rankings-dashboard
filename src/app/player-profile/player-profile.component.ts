@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {PlayerService} from "../services/player.service";
-import {Player} from "../models/Player";
-import {players} from "../models/mocks/playersMock";
+import {PlayerService} from "../core/services/player.service";
+import {Player} from "../core/models/Player";
+import {players} from "../core/models/mocks/playersMock";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
