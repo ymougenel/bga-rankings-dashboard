@@ -1,4 +1,15 @@
-<div id="profile">
+<div id="dashboard">
+
+  <input type="text"  [(ngModel)]="nameQuery"  (keypress)="updateNameQuery($event.target.value)" placeholder="Player Name"/><i class="fa fa-search" aria-hidden="true"></i>
+  <div class="profileSelection" *ngIf="playersNameQueryResult">
+    <a *ngFor="let player of playersNameQueryResult.content" routerLink="/dashboard/{{player.name}}">
+      <div class="playerSelection btn btn-outline-dark">
+        <p>{{player.name}}</p>
+        <img [src]="player.avatar">
+      </div>
+    </a>
+  </div>
+
   <!--Profil info: name, avatar & XP-->
   <div class="pageContainers" *ngIf="player">
     <app-player-profile [player]="player"></app-player-profile>

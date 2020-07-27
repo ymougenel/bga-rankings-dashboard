@@ -14,4 +14,18 @@
     //background-repeat: space;
     background-image: url("https://x.boardgamearena.net/data/themereleases/200316-1631/img/layout/back-main.jpg");
   }
+
+  .profileSelection {
+    display: flex;
+  }
+
+  .playerSelection {
+    margin: 5px;
+    font-weight: bold;
+    img {
+      width: 64px;
+      height: 64px;
+      float: inside;
+    }
+  }
 }
