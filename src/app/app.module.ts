@@ -8,6 +8,7 @@ import { PlayerProfileComponent } from './player-profile/player-profile.componen
 import {HttpClientModule} from "@angular/common/http";
 import { PlayerGraphComponent } from './player-graph/player-graph.component';
 import {ChartsModule} from "ng2-charts";
+import {CoreModule} from "./core/core.module";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {ChartsModule} from "ng2-charts";
     ChartsModule,
     AppRoutingModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

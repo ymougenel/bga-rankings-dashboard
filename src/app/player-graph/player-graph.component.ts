@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {PlayerService} from "../services/player.service";
-import {Player} from "../models/Player";
-import {RankingsService} from "../services/rankings.service";
-import {Ranking} from "../models/Ranking";
+import {PlayerService} from "../core/services/player.service";
+import {Player} from "../core/models/Player";
+import {RankingsService} from "../core/services/rankings.service";
+import {Ranking} from "../core/models/Ranking";
 import {GraphConfig} from "./graph.config";
 
 @Component({
