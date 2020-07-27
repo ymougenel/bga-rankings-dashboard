@@ -1,7 +1,6 @@
-<p>player-graph works!</p>
-<div *ngIf="dataAvailable" style="display: block;">
+<div *ngIf="dataAvailable" class="container">
   <div class="chart-wrapper" style="display: block">
-    <h2>Linear evolution</h2>
+    <h2>Ranking evolution</h2>
     <canvas baseChart
             [datasets]="lineChartData"
             [labels]="lineChartLabels"

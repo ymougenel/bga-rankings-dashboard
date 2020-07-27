@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {PlayerService} from "../core/services/player.service";
+import {Component, Input, OnInit} from '@angular/core';
 import {Player} from "../core/models/Player";
 import {RankingsService} from "../core/services/rankings.service";
 import {Ranking} from "../core/models/Ranking";
 import {GraphConfig} from "./graph.config";
+import {Game} from "../core/models/Game";
 
 @Component({
   selector: 'app-player-graph',
@@ -16,6 +16,9 @@ export class PlayerGraphComponent implements OnInit {
   constructor(private rankingsServcie: RankingsService) {
   }
 
+  @Input() player: Player;
+  @Input() game: Game;
+
   public lineChartData: Array<any> = [];
   public lineChartLabels: Array<any> = [];
   rankings: Ranking[];
@@ -23,11 +26,12 @@ export class PlayerGraphComponent implements OnInit {
   graphConfig: GraphConfig = new GraphConfig();
 
   ngOnInit(): void {
-    this.getRankings('85045241', '1127');
+    console.log(this.player);
+    this.getRankings();
   }
 
-  getRankings(playerId, gameId): void {
-    this.rankingsServcie.getRankings(playerId, gameId)
+  getRankings(): void {
+    this.rankingsServcie.getRankings(this.player.id, this.game.id)
       .subscribe(rankings => {
         this.rankings = rankings;
         this.createGraph();
