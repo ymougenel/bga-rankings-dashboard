@@ -3,6 +3,8 @@ import {ActivatedRoute} from "@angular/router";
 import {PlayerService} from "../core/services/player.service";
 import {Player} from "../core/models/Player";
 import {players} from "../core/models/mocks/playersMock";
+import {games} from "../core/models/mocks/gamesMock";
+import {Game} from "../core/models/Game";
 
 @Component({
   selector: 'app-dashboard',
@@ -17,10 +19,12 @@ export class DashboardComponent implements OnInit {
   }
 
   player: Player;
+  favoriteGames: Game[];
 
   ngOnInit(): void {
     // this.getMockedProfile();
     this.getProfile();
+    this.favoriteGames = games;
   }
 
   getProfile(): void {

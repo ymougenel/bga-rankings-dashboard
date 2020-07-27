@@ -1,8 +1,11 @@
 <div id="profile">
   <!--Profil info: name, avatar & XP-->
-  <div class="pageContainers" >
+  <div class="pageContainers" *ngIf="player">
     <app-player-profile [player]="player"></app-player-profile>
     <!--TODO: Graph -->
+    <div class="chart">
+      <app-player-graph [player]="player" [game]="favoriteGames[0]"></app-player-graph>
+    </div>
   </div>
 </div>
 
