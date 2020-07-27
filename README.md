@@ -17,17 +17,25 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 - 0/3 Profile
 - 0/1 Basic chart
 - [ ] Game selectors 
-- [ ] Search Bar
+- [?] Search Bar
 
 **Profile**
 - [ ] Display XP
-- [ ] Basic UI
+- [X] Basic UI
 - [ ] Display 3 Favorites games
 
 **RankingChart**
-- [ ] Basic chart
+- [?] Basic chart
+
+**Refactor**
+- [ ] Remove critical vulnerability for [karma ](https://www.npmjs.com/advisories/755)
 
 **RankingsTable**
+- [ ] Basic ranking table
+- [ ] Progression overlay
+ 
+**Fixes**
+- Search ignore last char
+- Font awesome nginx
 
-TODO
 
