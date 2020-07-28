@@ -60,9 +60,50 @@
     margin-left: 16px;
     margin-right: 16px;
     margin-top: 4px;
-    height: 16px;
     line-height: 17px;
   }
 
+  .arrowbackl {
+    position: absolute;
+    top: -2px;
+    left: -16px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 14px 16px 14px 0px;
+    border-color: transparent #787878 transparent transparent;
+  }
 
+  .arrowl {
+    position: absolute;
+    top: 0px;
+    left: -14px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 14px 12px 0px;
+    border-color: transparent black transparent transparent;
+  }
+
+  .arrowback {
+    position: absolute;
+    top: -2px;
+    right: -16px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 14px 0 14px 16px;
+    border-color: transparent transparent transparent #787878;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 0px;
+    right: -14px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 0 12px 14px;
+    border-color: transparent transparent transparent black;
+  }
 }
