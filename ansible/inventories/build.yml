@@ -1,0 +1,9 @@
+# This file is an example: the host and variables should be changed
+all:
+  hosts:
+    server:
+      ansible_host: MY_SERVER
+
+  vars:
+    ansible_user: centos
+    BGA_APP_VERSION: "0.0.1"

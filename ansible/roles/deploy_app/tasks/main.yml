@@ -1,0 +1,12 @@
+---
+
+- name: Launch RGA front
+  docker_container:
+    name: bga-ranking-front
+    pull: yes
+    image: "slonepi/bga-ranking-front:{{ BGA_APP_VERSION }}"
+    state: started
+    ports:
+    - "8094:8080"
+    links:
+      - bga-ranking-back
