@@ -1,5 +1,3 @@
-import {ChartOptions, ChartType} from 'chart.js';
-
 export class GraphConfig {
   lineChartOptions: any = {
     responsive: true,
@@ -27,6 +25,11 @@ export class GraphConfig {
           }
         }
       ]
+    },
+    elements: {
+      line: {
+        fill: false
+      }
     }
   };
 
@@ -41,5 +44,4 @@ export class GraphConfig {
 
   public lineChartLegend: boolean = true;
   public lineChartType: string = 'line';
-
 }

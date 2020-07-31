@@ -1,6 +1,6 @@
-<div *ngIf="dataAvailable" class="container">
+<div *ngIf="dataAvailable && game" class="container">
   <div class="chart-wrapper" style="display: block">
-    <h2>Ranking evolution</h2>
+    <h2>{{game.name}} - Ranking evolution</h2>
     <canvas baseChart
             [datasets]="lineChartData"
             [labels]="lineChartLabels"
@@ -11,4 +11,5 @@
             (chartClick)="graphConfig.chartClicked($event)">
     </canvas>
   </div>
+
 </div>

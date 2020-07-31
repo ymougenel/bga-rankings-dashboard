@@ -13,7 +13,7 @@ import {Game} from "../core/models/Game";
 export class PlayerGraphComponent implements OnInit {
 
 
-  constructor(private rankingsServcie: RankingsService) {
+  constructor(private rankingsService: RankingsService) {
   }
 
   @Input() player: Player;
@@ -27,11 +27,12 @@ export class PlayerGraphComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.player);
+    console.log(this.game);
     this.getRankings();
   }
 
   getRankings(): void {
-    this.rankingsServcie.getRankings(this.player.id, this.game.id)
+    this.rankingsService.getRankings(this.player.id, this.game.id)
       .subscribe(rankings => {
         this.rankings = rankings;
         this.createGraph();
