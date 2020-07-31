@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Ranking} from "../models/Ranking";
 import {HttpClientConfig} from "./http-client-config";
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +18,17 @@ export class RankingsService {
     return this._http.get<Ranking[]>(`${this._config.baseUrl}/ranking/${gameId}/${playerId}`);
   }
 
-  //Requires premium
+  getRankingsBetween(gameId: string, startDate: Date, endDate: Date): Observable<Ranking[]> {
+    let startTimeStamp = this.toTimestamp(startDate);
+    let endTimeStamp = this.toTimestamp(endDate);
+    return this._http.get<Ranking[]>(`${this._config.baseUrl}/ranking/${gameId}/${startTimeStamp}/${endTimeStamp}`);
+  }
+
+  toTimestamp(date: Date): number {
+    return Math.round(date.getTime() / 1000);
+  }
+
+  // Feature stop: Conflict with bga premium elo chart
   // getELOs(playerId: number, gameId: number): Observable<string> {
   //   return this._http.get<string>(`${this.SITE_URL}?game${gameId}?player=${playerId}`);
   // }

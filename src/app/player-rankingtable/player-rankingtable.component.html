@@ -1,0 +1,18 @@
+<p>{{game.name}} - ranking Table</p>
+<table class="table table-dark">
+  <thead>
+  <tr>
+    <th scope="col">Rank</th>
+    <!--<th scope="col">+-</th>-->
+    <th scope="col">Player name</th>
+    <th scope="col">Elo</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let ranking of rankings">
+    <td scope="row">{{ranking.rank}}</td>
+    <td>{{ranking.playerId}}</td>
+    <td>{{ranking.elo}}</td>
+  </tr>
+  </tbody>
+</table>
