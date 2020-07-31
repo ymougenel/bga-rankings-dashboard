@@ -9,7 +9,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let ranking of rankings">
+  <tr *ngFor="let ranking of rankings" [className]="ranking.playerId==player.id? 'selection': ''">
     <td scope="row">{{ranking.rank}}</td>
     <td>{{ranking.playerId}}</td>
     <td>{{ranking.elo}}</td>
