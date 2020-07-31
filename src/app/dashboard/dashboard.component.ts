@@ -1,11 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {PlayerService} from "../core/services/player.service";
+import {PlayerService} from "../core/services/player/player.service";
 import {Player} from "../core/models/Player";
 import {players} from "../core/models/mocks/playersMock";
 import {games} from "../core/models/mocks/gamesMock";
 import {Game} from "../core/models/Game";
 import {Page} from "../core/models/page";
+import {GameService} from "../core/services/game/game.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -16,11 +17,14 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private playerService: PlayerService) {
+    private playerService: PlayerService,
+    private gameService: GameService) {
   }
 
   player: Player;
   favoriteGames: Game[];
+  selectedGame: Game;
+
   nameQuery = "";
   playersNameQueryResult: Page<Player>;
 
@@ -31,8 +35,11 @@ export class DashboardComponent implements OnInit {
       this.playerService.getProfile(playerName).subscribe(profile => {
         this.player = profile;
       });
+      this.gameService.allGames().subscribe(games => {
+        this.favoriteGames = games;
+        this.selectedGame = this.favoriteGames[0];
+      });
     });
-    this.favoriteGames = games;
   }
 
   getMockedProfile(): void {
@@ -40,6 +47,9 @@ export class DashboardComponent implements OnInit {
 
   }
 
+  onSelect(game: Game): void {
+    this.selectedGame = game;
+  }
   updateNameQuery(newQuery): void {
     console.log("Update name query called with" + this.nameQuery);
     if (this.nameQuery) {

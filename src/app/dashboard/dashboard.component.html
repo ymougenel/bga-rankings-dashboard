@@ -12,10 +12,17 @@
 
   <!--Profil info: name, avatar & XP-->
   <div class="pageContainers" *ngIf="player">
-    <app-player-profile [player]="player"></app-player-profile>
-    <!--TODO: Graph -->
-    <div class="chart">
-      <app-player-graph [player]="player" [game]="favoriteGames[0]"></app-player-graph>
+    <div class="first_row">
+      <app-player-profile [player]="player"></app-player-profile>
+      <div class="gameSelection">
+        <a class="game btn btn-outline-light" *ngFor="let game of favoriteGames" (click)="onSelect(game)">
+          <h3>{{game.name}}</h3>
+          <img src={{game.logo}}>
+        </a>
+      </div>
+    </div>
+    <div class="chart" *ngIf="selectedGame">
+      <app-player-graph [player]="player" [game]="selectedGame"></app-player-graph>
     </div>
   </div>
 </div>
