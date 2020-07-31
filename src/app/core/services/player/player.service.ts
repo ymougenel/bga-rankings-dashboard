@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
-import {Player} from "../models/Player";
+import {Player} from "../../models/Player";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {map} from "rxjs/operators";
-import {HttpClientConfig} from "./http-client-config";
-import {PageMapper} from "./page/page.mapper";
-import {PlayerMapper} from "./player/player.mapper";
-import {Page} from "../models/page";
+import {HttpClientConfig} from "../http-client-config";
+import {PageMapper} from "../page/page.mapper";
+import {PlayerMapper} from "./player.mapper";
+import {Page} from "../../models/page";
 
 @Injectable({
   providedIn: 'root'

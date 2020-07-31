@@ -2,10 +2,12 @@ version: '3.5'
 
 services:
   bga-nginx:
-    image: slonepi/bga-ranking-front:0.0.1
+    image: slonepi/bga-ranking-front:0.0.2
     container_name: bga-nginx
     build:
       dockerfile: docker/Dockerfile
       context: ./
     ports:
       - 80:80
+#    links:
+#    - bga-ranking-back
