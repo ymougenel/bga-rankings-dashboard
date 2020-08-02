@@ -14,7 +14,7 @@ export class RankingsService {
   constructor(private _http: HttpClient, private readonly _config: HttpClientConfig) {
   }
 
-  getRankings(playerId: string, gameId: string): Observable<Ranking[]> {
+  getRankings(playerId: number, gameId: string): Observable<Ranking[]> {
     return this._http.get<Ranking[]>(`${this._config.baseUrl}/ranking/${gameId}/${playerId}`);
   }
 
@@ -30,7 +30,7 @@ export class RankingsService {
 
   private _sliceRankings(rankings : Ranking[]): Ranking[] {
     const total = rankings.length;
-    const player_rankings_ng = rankings.filter( r => r.playerId = rankings[0].playerId.toString()).length;
+    const player_rankings_ng = rankings.filter( r => r.playerId = rankings[0].playerId).length;
     console.log("*** slicing"+ rankings + "\t selecting:" + total/player_rankings_ng);
     return rankings.slice(0, total/player_rankings_ng);
   }

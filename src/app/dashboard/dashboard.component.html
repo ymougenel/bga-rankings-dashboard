@@ -15,7 +15,7 @@
     <div class="first_row">
       <app-player-profile [player]="player"></app-player-profile>
       <div class="gameSelection">
-        <a class="game btn btn-outline-light" *ngFor="let game of favoriteGames" (click)="onSelect(game)">
+        <a class="game btn btn-outline-light "  *ngFor="let game of favoriteGames" (click)="onSelect(game)">
           <h3>{{game.name}}</h3>
           <img src={{game.logo}}>
         </a>

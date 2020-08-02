@@ -3,14 +3,14 @@ import { defaultsDeep } from 'lodash';
 export class Player {
   private static readonly _default: () => Partial<Player> = () => ({
     name: '',
-    id: '0',
+    id: 0,
     country: '',
     avatar: '',
   });
 
 
   name: string;
-  id: string;
+  id: number;
   avatar: string;
   // langues: string[];
   // gender: string;

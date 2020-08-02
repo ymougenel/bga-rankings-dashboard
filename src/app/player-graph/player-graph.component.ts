@@ -33,7 +33,7 @@ export class PlayerGraphComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getRankings(playerId: string, gameId: string): void {
+  getRankings(playerId: number, gameId: string): void {
     this.rankingsService.getRankings(playerId, gameId)
       .subscribe(rankings => {
         this.rankings = rankings;

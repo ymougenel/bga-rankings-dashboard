@@ -47,12 +47,12 @@ export class PlayerRankingtableComponent implements OnInit {
       return rankings;
     }
     const total = rankings.length;
-    const player_rankings_ng = rankings.filter(r => r.playerId == rankings[0].playerId).length;
+    const player_rankings_ng = rankings.filter(r => r.playerId.toString() == rankings[0].playerId.toString()).length;
     console.log("*** slicing (total:" + total + ", nb" + player_rankings_ng + "\t selecting:" + total / player_rankings_ng);
     return rankings.slice(0, total / player_rankings_ng);
   }
 
-  private _slicePlayerRankings(rankings: Ranking[], playerId: string, count: number): Ranking[] {
+  private _slicePlayerRankings(rankings: Ranking[], playerId: number, count: number): Ranking[] {
     if (rankings.length < 1) {
       return rankings;
     }
@@ -61,8 +61,8 @@ export class PlayerRankingtableComponent implements OnInit {
 
     return rankings.filter(ranking => Math.abs(ranking.rank - playerRank) <= count / 2);
   }
-
   // groupBy(objectArray) {
+
   //   return objectArray.reduce((acc, obj) => {
   //     const key = obj["playerId"];
   //     if (!acc[key]) {
