@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, SimpleChanges} from '@angular/core';
 import {Player} from "../core/models/Player";
 import {RankingsService} from "../core/services/rankings.service";
 import {Ranking} from "../core/models/Ranking";
@@ -25,14 +25,16 @@ export class PlayerGraphComponent implements OnInit {
   dataAvailable = false;
   graphConfig: GraphConfig = new GraphConfig();
 
-  ngOnInit(): void {
-    console.log(this.player);
-    console.log(this.game);
-    this.getRankings();
+  ngOnChanges(changes: SimpleChanges) {
+    this.getRankings(this.player.id, changes.game.currentValue.id);
+
   }
 
-  getRankings(): void {
-    this.rankingsService.getRankings(this.player.id, this.game.id)
+  ngOnInit(): void {
+  }
+
+  getRankings(playerId: string, gameId: string): void {
+    this.rankingsService.getRankings(playerId, gameId)
       .subscribe(rankings => {
         this.rankings = rankings;
         this.createGraph();
@@ -40,6 +42,8 @@ export class PlayerGraphComponent implements OnInit {
   }
 
   createGraph() {
+    this.lineChartData = [];
+    this.lineChartLabels = [];
     this.rankings.forEach(r => {
       this.lineChartData.push({data: r.rank, label: r.playerId});
       this.lineChartLabels.push(new Date(r.date));

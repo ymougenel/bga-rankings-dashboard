@@ -25,7 +25,6 @@ export class PlayerRankingtableComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-
     this.getRankings(changes.game.currentValue.id);
 
   }
@@ -39,12 +38,14 @@ export class PlayerRankingtableComponent implements OnInit {
     console.log(endDate);
     this.rankingService.getRankingsBetween(this.game.id, startDate, endDate).subscribe(rankinks => {
         this.rankings = this._slicePlayerRankings(this._sliceRankingsOccurences(rankinks), this.player.id, 10);
-
       }
     );
   }
 
   private _sliceRankingsOccurences(rankings: Ranking[]): Ranking[] {
+    if (rankings.length < 1) {
+      return rankings;
+    }
     const total = rankings.length;
     const player_rankings_ng = rankings.filter(r => r.playerId == rankings[0].playerId).length;
     console.log("*** slicing (total:" + total + ", nb" + player_rankings_ng + "\t selecting:" + total / player_rankings_ng);
@@ -52,6 +53,9 @@ export class PlayerRankingtableComponent implements OnInit {
   }
 
   private _slicePlayerRankings(rankings: Ranking[], playerId: string, count: number): Ranking[] {
+    if (rankings.length < 1) {
+      return rankings;
+    }
     const total = rankings.length;
     const playerRank = rankings.filter(r => r.playerId == playerId)[0].rank;
 

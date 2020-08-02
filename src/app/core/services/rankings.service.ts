@@ -30,7 +30,7 @@ export class RankingsService {
 
   private _sliceRankings(rankings : Ranking[]): Ranking[] {
     const total = rankings.length;
-    const player_rankings_ng = rankings.filter( r => r.playerId = rankings[0].playerId).length;
+    const player_rankings_ng = rankings.filter( r => r.playerId = rankings[0].playerId.toString()).length;
     console.log("*** slicing"+ rankings + "\t selecting:" + total/player_rankings_ng);
     return rankings.slice(0, total/player_rankings_ng);
   }
