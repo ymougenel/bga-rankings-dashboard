@@ -1,7 +1,9 @@
+import {Player} from "./Player";
+
 export class Ranking {
   elo: number;
   rank: number;
-  playerId: number;
+  player: Player;
   gameId: number;
   date: string;
 }

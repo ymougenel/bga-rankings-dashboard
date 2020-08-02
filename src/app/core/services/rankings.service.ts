@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Ranking} from "../models/Ranking";
 import {HttpClientConfig} from "./http-client-config";
+import {PlayerMapper} from "./player/player.mapper";
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,7 @@ import {HttpClientConfig} from "./http-client-config";
 export class RankingsService {
 
   // SITE_URL = 'https://boardgamearena.com/playerstat/playerstat/getrankevol.html?player=86499799&game=1127'
+  private _playerMapper = new PlayerMapper();
 
   constructor(private _http: HttpClient, private readonly _config: HttpClientConfig) {
   }
@@ -28,12 +30,6 @@ export class RankingsService {
     return Math.round(date.getTime() / 1000);
   }
 
-  private _sliceRankings(rankings : Ranking[]): Ranking[] {
-    const total = rankings.length;
-    const player_rankings_ng = rankings.filter( r => r.playerId = rankings[0].playerId).length;
-    console.log("*** slicing"+ rankings + "\t selecting:" + total/player_rankings_ng);
-    return rankings.slice(0, total/player_rankings_ng);
-  }
   // Feature stop: Conflict with bga premium elo chart
   // getELOs(playerId: number, gameId: number): Observable<string> {
   //   return this._http.get<string>(`${this.SITE_URL}?game${gameId}?player=${playerId}`);

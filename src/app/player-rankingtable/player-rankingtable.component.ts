@@ -47,7 +47,7 @@ export class PlayerRankingtableComponent implements OnInit {
       return rankings;
     }
     const total = rankings.length;
-    const player_rankings_ng = rankings.filter(r => r.playerId.toString() == rankings[0].playerId.toString()).length;
+    const player_rankings_ng = rankings.filter(r => r.player.id.toString() == rankings[0].player.id.toString()).length;
     console.log("*** slicing (total:" + total + ", nb" + player_rankings_ng + "\t selecting:" + total / player_rankings_ng);
     return rankings.slice(0, total / player_rankings_ng);
   }
@@ -57,7 +57,7 @@ export class PlayerRankingtableComponent implements OnInit {
       return rankings;
     }
     const total = rankings.length;
-    const playerRank = rankings.filter(r => r.playerId == playerId)[0].rank;
+    const playerRank = rankings.filter(r => r.player.id == playerId)[0].rank;
 
     return rankings.filter(ranking => Math.abs(ranking.rank - playerRank) <= count / 2);
   }

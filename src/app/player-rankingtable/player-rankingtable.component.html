@@ -1,4 +1,3 @@
-<p>{{game.name}} - ranking Table</p>
 <table class="table table-dark">
   <thead>
   <tr>
@@ -9,9 +8,9 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let ranking of rankings" [className]="ranking.playerId==player.id? 'selection': ''">
+  <tr *ngFor="let ranking of rankings" [className]="ranking.player.id==player.id? 'selection': ''">
     <td scope="row">{{ranking.rank}}</td>
-    <td>{{ranking.playerId}}</td>
+    <td>{{ranking.player.name}}</td>
     <td>{{ranking.elo}}</td>
   </tr>
   </tbody>
