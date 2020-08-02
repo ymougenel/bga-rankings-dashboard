@@ -29,9 +29,16 @@
     }
   }
 
-  .game img{
+  .game {
+    img {
       width: 128px;
       height: 128px;
+    }
+    margin: 15px;
+    padding: 0px;
+    div {
+      padding: 8px;
+    }
   }
 
   .first_row {
@@ -39,6 +46,6 @@
   }
 
   .game-selected {
-    background-color: rgba(255, 255, 255, 0.5)
+    background-color: rgba(255, 255, 255, 0.7)
   }
 }
