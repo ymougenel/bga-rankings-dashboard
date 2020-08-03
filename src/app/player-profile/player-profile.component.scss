@@ -14,7 +14,7 @@
   .playerInfo {
     //display: grid;
     width: 40%;
-    height: 160px; // TODO: externalize with avatar size
+    height: 160px;
   }
 
   .avatar {
@@ -105,5 +105,27 @@
     border-style: solid;
     border-width: 12px 0 12px 14px;
     border-color: transparent transparent transparent black;
+  }
+
+  /* Responsive Styles */
+  @media only screen and (max-width: 768px) and (orientation: portrait) {
+    .avatar {
+      height: 16px;
+      width: 16px;
+    }
+    .playerInfo {
+      height: auto;
+    }
+
+  }
+
+  @media only screen and (max-width: 1025px) and (orientation: landscape) {
+    .avatar {
+      height: 64px;
+      width: 64px;
+    }
+    .playerInfo {
+      height: auto;
+    }
   }
 }
