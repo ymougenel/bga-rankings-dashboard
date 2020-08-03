@@ -20,10 +20,10 @@ export class RankingsService {
     return this._http.get<Ranking[]>(`${this._config.baseUrl}/ranking/${gameId}/${playerId}`);
   }
 
-  getRankingsBetween(gameId: string, startDate: Date, endDate: Date): Observable<Ranking[]> {
+  getRankingsBetween(gameId: string, playerId: number, count: number, startDate: Date, endDate: Date): Observable<Ranking[]> {
     let startTimeStamp = this.toTimestamp(startDate);
     let endTimeStamp = this.toTimestamp(endDate);
-    return this._http.get<Ranking[]>(`${this._config.baseUrl}/ranking/${gameId}/${startTimeStamp}/${endTimeStamp}`)
+    return this._http.get<Ranking[]>(`${this._config.baseUrl}/ranking/${gameId}/${playerId}/${count}/${startTimeStamp}/${endTimeStamp}`)
   }
 
   toTimestamp(date: Date): number {

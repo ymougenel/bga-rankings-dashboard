@@ -36,42 +36,12 @@ export class PlayerRankingtableComponent implements OnInit {
     console.log("-------------------------------");
     console.log(startDate);
     console.log(endDate);
-    this.rankingService.getRankingsBetween(this.game.id, startDate, endDate).subscribe(rankinks => {
-        this.rankings = this._slicePlayerRankings(this._sliceRankingsOccurences(rankinks), this.player.id, 10);
-      }
-    );
+    // TODO: mv harcoded count value to properties
+    this.rankingService.getRankingsBetween(this.game.id, this.player.id, 10, startDate, endDate).subscribe(rankings =>
+      // TODO handle slicing in back (for variation)
+      this.rankings = rankings.slice(0, rankings.length / 2)
+    )
+
   }
-
-  private _sliceRankingsOccurences(rankings: Ranking[]): Ranking[] {
-    if (rankings.length < 1) {
-      return rankings;
-    }
-    const total = rankings.length;
-    const player_rankings_ng = rankings.filter(r => r.player.id.toString() == rankings[0].player.id.toString()).length;
-    console.log("*** slicing (total:" + total + ", nb" + player_rankings_ng + "\t selecting:" + total / player_rankings_ng);
-    return rankings.slice(0, total / player_rankings_ng);
-  }
-
-  private _slicePlayerRankings(rankings: Ranking[], playerId: number, count: number): Ranking[] {
-    if (rankings.length < 1) {
-      return rankings;
-    }
-    const total = rankings.length;
-    const playerRank = rankings.filter(r => r.player.id == playerId)[0].rank;
-
-    return rankings.filter(ranking => Math.abs(ranking.rank - playerRank) <= count / 2);
-  }
-  // groupBy(objectArray) {
-
-  //   return objectArray.reduce((acc, obj) => {
-  //     const key = obj["playerId"];
-  //     if (!acc[key]) {
-  //       acc[key] = [];
-  //     }
-  //     // Add object to list for given key's value
-  //     acc[key].push(obj);
-  //     return acc;
-  //   }, {});
-  // }
 
 }

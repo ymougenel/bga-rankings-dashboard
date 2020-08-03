@@ -44,6 +44,7 @@ export class PlayerGraphComponent implements OnInit {
   createGraph() {
     this.lineChartData = [];
     this.lineChartLabels = [];
+    console.log(this.rankings);
     this.rankings.forEach(r => {
       this.lineChartData.push({data: r.rank, label: "label"});
       this.lineChartLabels.push(new Date(r.date));
