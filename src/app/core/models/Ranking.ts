@@ -6,4 +6,5 @@ export class Ranking {
   player: Player;
   gameId: number;
   date: string;
+  rankVariation: number;
 }

@@ -2,7 +2,7 @@
   <thead>
   <tr>
     <th scope="col">Rank</th>
-    <!--<th scope="col">+-</th>-->
+    <th scope="col"></th>
     <th scope="col">Player name</th>
     <th scope="col">Elo</th>
   </tr>
@@ -10,6 +10,9 @@
   <tbody>
   <tr *ngFor="let ranking of rankings" [className]="ranking.player.id==player.id? 'selection': ''">
     <td scope="row">{{ranking.rank}}</td>
+    <td *ngIf="ranking.rankVariation > 0" class="positive-rank">&#8743; ({{ranking.rankVariation}})</td>
+    <td *ngIf="ranking.rankVariation == 0" class="neutral-rank">&#8728;</td>
+    <td *ngIf="ranking.rankVariation < 0" class="negative-rank">&#8744; ({{ranking.rankVariation}})</td>
     <td>{{ranking.player.name}}</td>
     <td>{{ranking.elo}}</td>
   </tr>

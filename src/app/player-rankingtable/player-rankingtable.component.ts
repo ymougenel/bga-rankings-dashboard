@@ -39,7 +39,7 @@ export class PlayerRankingtableComponent implements OnInit {
     // TODO: mv harcoded count value to properties
     this.rankingService.getRankingsBetween(this.game.id, this.player.id, 10, startDate, endDate).subscribe(rankings =>
       // TODO handle slicing in back (for variation)
-      this.rankings = rankings.slice(0, rankings.length / 2)
+      this.rankings = rankings
     )
 
   }
