@@ -1,18 +1,30 @@
 <div id="dashboard">
-
-  <input type="text" [(ngModel)]="nameQuery" (keypress)="updateNameQuery($event.target.value)"
-         placeholder="Player Name"/><i class="fa fa-search" aria-hidden="true"></i>
-  <div class="profileSelection" *ngIf="playersNameQueryResult">
-    <a *ngFor="let player of playersNameQueryResult.content" routerLink="/dashboard/{{player.name}}">
-      <div class="playerSelection btn btn-outline-dark">
-        <p>{{player.name}}</p>
-        <img [src]="player.avatar">
-      </div>
-    </a>
+  <!-- ********************* Nav bar ********************* -->
+  <div class="toolbar" role="banner">
+    <input type="text" [(ngModel)]="nameQuery" (keypress)="updateNameQuery($event.target.value)"
+           placeholder="Player Name"/>
+    <!--<i class="fa fa-search" aria-hidden="true"></i>-->
+    <div class="profileSelection" *ngIf="playersNameQueryResult">
+      <a *ngFor="let player of playersNameQueryResult.content" routerLink="/dashboard/{{player.name}}">
+        <div class="playerSelection btn btn-outline-dark">
+          <p>{{player.name}}</p>
+          <img [src]="player.avatar">
+        </div>
+      </a>
+    </div>
+    <div class="github-project">
+      <a aria-label="Github project" target="_blank" rel="noopener"
+         href="https://github.com/ymougenel/bga-rankings-dashboard"
+         title="Github">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png">
+      </a>
+    </div>
   </div>
-
-  <!--Profil info: name, avatar & XP-->
+  <!-- *********************  Page content ********************* -->
   <div class="pageContainers" *ngIf="player">
+
+    <!--First row: Profil & Game selection-->
     <div class="first_row">
       <app-player-profile [player]="player"></app-player-profile>
       <div class="gameSelection">
@@ -24,6 +36,7 @@
         </a>
       </div>
     </div>
+    <!-- Second row: RankingTable & Chart -->
     <div class="container">
       <div class="row">
         <div class="col-4 ranking-table" *ngIf="selectedGame">
