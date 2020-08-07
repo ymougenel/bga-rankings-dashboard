@@ -6,6 +6,8 @@ export const players: Player[] = [
     "name": "einstein",
     "avatar": "https://www.pressesante.com/wp-content/uploads/2019/06/albert-einstein.jpg",
     "country": "fr",
+    "countryFlagX": 112,
+    "countryFlagY": 66
     // "countryFlag": "fr",
   },
   {
@@ -13,6 +15,8 @@ export const players: Player[] = [
     "name": "tomy",
     "avatar": "https://static1.purebreak.com/articles/5/17/96/95/@/681988-peaky-blinders-cillian-murphy-tommy-diapo-2.jpg",
     "country": "en",
+    "countryFlagX": 112,
+    "countryFlagY": 88
     // "countryFlag": "enUrl",
   }
 ];

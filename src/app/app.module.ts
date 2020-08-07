@@ -3,14 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { PlayerProfileComponent } from './player-profile/player-profile.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { PlayerProfileComponent } from './components/player-profile/player-profile.component';
 import {HttpClientModule} from "@angular/common/http";
-import { PlayerGraphComponent } from './player-graph/player-graph.component';
+import { PlayerGraphComponent } from './components/player-graph/player-graph.component';
 import {ChartsModule} from "ng2-charts";
 import {CoreModule} from "./core/core.module";
 import {FormsModule} from "@angular/forms";
-import { PlayerRankingtableComponent } from './player-rankingtable/player-rankingtable.component';
+import { PlayerRankingtableComponent } from './components/player-rankingtable/player-rankingtable.component';
+import {PlayerCountryComponent} from "./components/commun/player-country/player-country.component";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PlayerRankingtableComponent } from './player-rankingtable/player-rankin
     DashboardComponent,
     PlayerProfileComponent,
     PlayerGraphComponent,
-    PlayerRankingtableComponent
+    PlayerRankingtableComponent,
+    PlayerCountryComponent,
   ],
   imports: [
     BrowserModule,

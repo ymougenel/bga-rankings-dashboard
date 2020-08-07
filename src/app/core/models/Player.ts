@@ -4,8 +4,10 @@ export class Player {
   private static readonly _default: () => Partial<Player> = () => ({
     name: '',
     id: 0,
-    country: '',
     avatar: '',
+    country: '',
+    countryFlagX: 0,
+    countryFlagY: 0
   });
 
 
@@ -15,7 +17,8 @@ export class Player {
   // langues: string[];
   // gender: string;
   country: string;
-  // countryFlag: string="";
+  countryFlagX: number;
+  countryFlagY: number;
 
   constructor(player?: Partial<Player>) {
     defaultsDeep(this, player, Player._default());

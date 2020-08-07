@@ -1,8 +1,8 @@
 import {Component, Input, OnInit, SimpleChanges} from '@angular/core';
-import {Player} from "../core/models/Player";
-import {Game} from "../core/models/Game";
-import {RankingsService} from "../core/services/rankings.service";
-import {Ranking} from "../core/models/Ranking";
+import {Player} from "../../core/models/Player";
+import {Game} from "../../core/models/Game";
+import {RankingsService} from "../../core/services/rankings.service";
+import {Ranking} from "../../core/models/Ranking";
 import {groupBy, mergeMap, toArray} from "rxjs/operators";
 import {map} from "rxjs/operators";
 

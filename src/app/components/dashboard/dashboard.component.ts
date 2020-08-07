@@ -1,12 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {PlayerService} from "../core/services/player/player.service";
-import {Player} from "../core/models/Player";
-import {players} from "../core/models/mocks/playersMock";
-import {games} from "../core/models/mocks/gamesMock";
-import {Game} from "../core/models/Game";
-import {Page} from "../core/models/page";
-import {GameService} from "../core/services/game/game.service";
+import {PlayerService} from "../../core/services/player/player.service";
+import {Player} from "../../core/models/Player";
+import {players} from "../../core/models/mocks/playersMock";
+import {Game} from "../../core/models/Game";
+import {Page} from "../../core/models/page";
+import {GameService} from "../../core/services/game/game.service";
 
 @Component({
   selector: 'app-dashboard',

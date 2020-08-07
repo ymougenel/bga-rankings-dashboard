@@ -15,12 +15,13 @@
   .playerInfo {
     //display: grid;
     width: 40%;
-    height: 160px;
+    height: 120px;
+    padding-right: 15px;
   }
 
   .avatar {
-    width: 160px;
-    height: 160px;
+    width: 120px;
+    height: 120px;
     float: left;
     border-radius: 30px;
   }
@@ -29,15 +30,7 @@
     //background-color: #1976d2;
   }
 
-  .country {
-    float: right;
-    background-image: url("https://x.boardgamearena.net/data/themereleases/200724-1351/img/mainsite/flags.png");
-    background-position-x:-112px;
-    background-position-y:-66px;
-    height: 11px;
-    width:16px;
-    margin: 25px;
-  }
+
 
   .playerAvatar {
     //background-color: #d258bc;

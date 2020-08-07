@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {DashboardComponent} from "./dashboard/dashboard.component";
-import {PlayerProfileComponent} from "./player-profile/player-profile.component";
-import {PlayerGraphComponent} from "./player-graph/player-graph.component";
+import {DashboardComponent} from "./components/dashboard/dashboard.component";
+import {PlayerProfileComponent} from "./components/player-profile/player-profile.component";
+import {PlayerGraphComponent} from "./components/player-graph/player-graph.component";
 
 
 const routes: Routes = [

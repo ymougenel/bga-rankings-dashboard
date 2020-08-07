@@ -1,9 +1,10 @@
-import {Component, Input, OnInit, SimpleChanges} from '@angular/core';
-import {Player} from "../core/models/Player";
-import {RankingsService} from "../core/services/rankings.service";
-import {Ranking} from "../core/models/Ranking";
+import {Component, Input, OnInit, SimpleChanges, ViewChild} from '@angular/core';
+import {Player} from "../../core/models/Player";
+import {RankingsService} from "../../core/services/rankings.service";
+import {Ranking} from "../../core/models/Ranking";
 import {GraphConfig} from "./graph.config";
-import {Game} from "../core/models/Game";
+import {Game} from "../../core/models/Game";
+import {BaseChartDirective} from "ng2-charts";
 
 @Component({
   selector: 'app-player-graph',
@@ -19,8 +20,11 @@ export class PlayerGraphComponent implements OnInit {
   @Input() player: Player;
   @Input() game: Game;
 
-  public lineChartData: Array<any> = [];
-  public lineChartLabels: Array<any> = [];
+  @ViewChild("baseChart")
+  chart: BaseChartDirective;
+
+  public lineChartData;
+  public lineChartLabels;
   rankings: Ranking[];
   dataAvailable = false;
   graphConfig: GraphConfig = new GraphConfig();
@@ -42,11 +46,10 @@ export class PlayerGraphComponent implements OnInit {
   }
 
   createGraph() {
-    this.lineChartData = [];
+    this.lineChartData = [{data: [], label: "rank"}];
     this.lineChartLabels = [];
-    console.log(this.rankings);
     this.rankings.forEach(r => {
-      this.lineChartData.push({data: r.rank, label: "rank"});
+      this.lineChartData[0].data.push(r.rank);
       this.lineChartLabels.push(new Date(r.date));
     });
     this.dataAvailable = true;

@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  // appVersion: require('../../package.json').version + '-dev',
   api: {
     baseUrl: 'http://localhost:8080'
   },

@@ -13,7 +13,9 @@
     <td *ngIf="ranking.rankVariation > 0" class="positive-rank">&#8743; ({{ranking.rankVariation}})</td>
     <td *ngIf="ranking.rankVariation == 0" class="neutral-rank">&#8728;</td>
     <td *ngIf="ranking.rankVariation < 0" class="negative-rank">&#8744; ({{ranking.rankVariation}})</td>
-    <td>{{ranking.player.name}}</td>
+    <td>{{ranking.player.name}}
+      <app-player-country [player]="ranking.player"></app-player-country>
+    </td>
     <td>{{ranking.elo}}</td>
   </tr>
   </tbody>
