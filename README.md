@@ -3,12 +3,12 @@
 ## Context
 BGA Dashboard offers a competitive view for [BoardGameArena](http://www.boardgamearena.com/) players.
 
-
+[-> https://ymougenel.tech/bga](https://ymougenel.tech/bga)
 <img src="./.README/bga_dashboard.png" alt="screenshot" /> 
 
-[https://ymougenel.tech/bga](https://ymougenel.tech/bga)
 
-If you enjoy the project, give it a <img src="./.README/star.png" alt="star" /> :smile:
+
+If you enjoy the project, give it a <img src="./.README/star.png" alt="star" /> :smiley:
 
 
 ## Development 
