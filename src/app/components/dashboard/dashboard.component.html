@@ -39,10 +39,10 @@
     <!-- Second row: RankingTable & Chart -->
     <div class="container">
       <div class="row">
-        <div class="col-4 ranking-table" *ngIf="selectedGame">
+        <div class="col-5 ranking-table" *ngIf="selectedGame">
           <app-player-rankingtable [player]="player" [game]="selectedGame"></app-player-rankingtable>
         </div>
-        <div class="col-8 chart" *ngIf="selectedGame">
+        <div class="col-7 chart" *ngIf="selectedGame">
           <app-player-graph [player]="player" [game]="selectedGame"></app-player-graph>
         </div>
       </div>
