@@ -17,7 +17,7 @@ export class GoogleAnalyticsEventsService {
     eventAction: string,
     eventLabel: string = null,
     eventValue: number = null) {
-    if (true) {
+    if (environment.production) {
       gtag('event', eventName, {
         eventCategory: eventCategory,
         eventLabel: eventLabel,
