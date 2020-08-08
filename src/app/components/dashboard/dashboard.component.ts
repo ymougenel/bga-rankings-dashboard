@@ -6,6 +6,7 @@ import {players} from "../../core/models/mocks/playersMock";
 import {Game} from "../../core/models/Game";
 import {Page} from "../../core/models/page";
 import {GameService} from "../../core/services/game/game.service";
+import {GoogleAnalyticsEventsService} from "../../core/services/analytics/google-analytics-events.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -17,7 +18,8 @@ export class DashboardComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private playerService: PlayerService,
-    private gameService: GameService) {
+    private gameService: GameService,
+    private googleAnalyticsService: GoogleAnalyticsEventsService) {
   }
 
   player: Player;
@@ -31,6 +33,9 @@ export class DashboardComponent implements OnInit {
     // this.getMockedProfile();
     this.route.params.subscribe(params => {
       let playerName = params['playername'];
+      this
+        .googleAnalyticsService
+        .eventEmitter("dashboard", "profile", "profile", "click", playerName);
       this.playerService.getProfile(playerName).subscribe(profile => {
         this.player = profile;
       });

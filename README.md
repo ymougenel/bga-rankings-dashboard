@@ -15,7 +15,7 @@ If you enjoy the project, give it a <img src="./.README/star.png" alt="star" /> 
 
 1. Run [the backend](https://github.com/ymougenel/bga-dashboard-back ) (DB + springboot)
 
-2. Run `ng serve` for a dev server. 
+2. Run `npm start` for a dev server. 
 
 Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
@@ -27,4 +27,4 @@ It also applies to all the suggestion you have regarding some future enhancement
 
 
 ## License
-The project is under [Mozilla Public License (v2.0)](./license).
+The project is under [Mozilla Public License (v2.0)](./License).
