@@ -25,17 +25,15 @@
   <div class="pageContainers" *ngIf="player">
 
     <!--First row: Profil & Game selection-->
-    <div class="first_row">
       <app-player-profile [player]="player"></app-player-profile>
       <div class="gameSelection">
         <a class="game btn btn-outline-light " *ngFor="let game of favoriteGames" (click)="onSelect(game)">
           <div [class.game-selected]="game.id == selectedGame.id">
-            <h3>{{game.name}}</h3>
+            <h4>{{game.name}}</h4>
             <img src={{game.logo}}>
           </div>
         </a>
       </div>
-    </div>
     <!-- Second row: RankingTable & Chart -->
     <div class="container">
       <div class="row">

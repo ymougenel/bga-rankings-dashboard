@@ -19,9 +19,16 @@
     display: flex;
   }
 
+  .gameSelection {
+    display: flex;
+    justify-content: center;
+    margin:15px
+  }
+
   .playerSelection {
     margin: 5px;
     font-weight: bold;
+
     img {
       width: 44px;
       height: 44px;
@@ -35,18 +42,16 @@
 
   .game {
     img {
-      width: 96px;
-      height: 96px;
+      width: 80px;
+      height: 80px;
     }
-    margin: 15px;
+    h4 {
+      display: inline-block;
+    }
     padding: 0px;
     div {
       padding: 8px;
     }
-  }
-
-  .first_row {
-    //display: flex;
   }
 
   .game-selected {
