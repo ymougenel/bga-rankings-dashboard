@@ -1,6 +1,7 @@
 export class GraphConfig {
   lineChartOptions: any = {
     responsive: true,
+    maintainAspectRatio: false,
     legend: {
       position: 'right'
     },
