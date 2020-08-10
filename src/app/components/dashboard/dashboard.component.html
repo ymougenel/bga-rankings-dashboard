@@ -4,9 +4,9 @@
     <input type="text" [(ngModel)]="nameQuery" (keypress)="updateNameQuery($event.target.value)"
            placeholder="Player Name"/>
     <!--<i class="fa fa-search" aria-hidden="true"></i>-->
-    <div class="profileSelection" *ngIf="playersNameQueryResult">
+    <div class="profile-selection" *ngIf="playersNameQueryResult">
       <a *ngFor="let player of playersNameQueryResult.content" routerLink="/dashboard/{{player.name}}">
-        <div class="playerSelection btn btn-outline-dark">
+        <div class="player-selection btn btn-outline-dark">
           <p>{{player.name}}</p>
           <img [src]="player.avatar">
         </div>
@@ -22,11 +22,11 @@
     </div>
   </div>
   <!-- *********************  Page content ********************* -->
-  <div class="pageContainers" *ngIf="player">
+  <div class="page-containers" *ngIf="player">
 
     <!--First row: Profil & Game selection-->
       <app-player-profile [player]="player"></app-player-profile>
-      <div class="gameSelection">
+      <div class="game-selection">
         <a class="game btn btn-outline-light " *ngFor="let game of favoriteGames" (click)="onSelect(game)">
           <div [class.game-selected]="game.id == selectedGame.id">
             <h4>{{game.name}}</h4>
@@ -35,7 +35,7 @@
         </a>
       </div>
     <!-- Second row: RankingTable & Chart -->
-    <div class="container">
+    <div class="second-row">
       <div class="row">
         <div class="col-5 ranking-table" *ngIf="selectedGame">
           <app-player-rankingtable [player]="player" [game]="selectedGame"></app-player-rankingtable>

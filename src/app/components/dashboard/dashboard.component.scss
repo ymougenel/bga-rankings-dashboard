@@ -7,7 +7,7 @@
     padding: 0px;
   }
   // Page displaying all containers
-  .pageContainers {
+  .page-containers {
     padding: 80px;
     padding-top: 20px;
     //background-size: 150px;
@@ -15,17 +15,17 @@
     background-image: url("https://x.boardgamearena.net/data/themereleases/200316-1631/img/layout/back-main.jpg");
   }
 
-  .profileSelection {
+  .profile-selection {
     display: flex;
   }
 
-  .gameSelection {
+  .game-selection {
     display: flex;
     justify-content: center;
     margin:15px
   }
 
-  .playerSelection {
+  .player-selection {
     margin: 5px;
     font-weight: bold;
 
@@ -40,6 +40,10 @@
     }
   }
 
+  .second-row {
+    margin-left: 150px;
+    margin-right: 150px;
+  }
   .game {
     img {
       width: 80px;
@@ -99,7 +103,7 @@
   /* Responsive Styles */
   @media only screen and (max-width: 768px) and (orientation: portrait) {
 
-    .pageContainers {
+    .page-containers {
       padding: 0px;
       padding-top: 5px;
     }
@@ -107,11 +111,11 @@
   }
 
   @media only screen and (max-width: 1025px) and (orientation: landscape) {
-    .pageContainers {
+    .page-containers {
       padding: 0px;
       padding-top: 0px;
     }
-    .gameSelection {
+    .game-selection {
       display: inline-block;
       img {
         height: 64px;
